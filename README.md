@@ -11,3 +11,5 @@ Steps:	create a fastapi backend 	anoop
     feed into vector db and its versioning	abdul
     build  a basic rag to fetch relevant queries	abdul
     pretty print the output to user	abdul
+
+![alt text](<KAI architecture .png>)
