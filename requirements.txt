@@ -2,3 +2,8 @@ sentence-transformers
 qdrant-client
 docling
 pandas
+fastapi[standard]
+chainlit
+pydantic-ai[logfire]
+langgraph 
+langsmith 
