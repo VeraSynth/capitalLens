@@ -1,0 +1,10 @@
+{
+    "dependencies": [
+        "langchain_openai",
+        "./your_package"
+    ],
+    "graphs": {
+        "my_agent": "./app/core/agent_manager.py:builder"
+    },
+    "env": ".env"
+}

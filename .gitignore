@@ -2,7 +2,8 @@
 data/
 .chainlit/
 .logfire/
-
+.langgraph_api/
+.files/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
