@@ -15,6 +15,7 @@ from langgraph.graph.message import add_messages
 from langgraph.types import StreamWriter
 logfire.configure()
 from app.agent.state import AgentState
+from app.core.memory import convert_human_message_to_model_message
 from app.prompts.rag_system_prompt import IPO_PROMPT_TEMPLATE, ADD_CONTEXT_TEMPLATE
 model = cast(KnownModelName, os.getenv('PYDANTIC_AI_MODEL', 'openai:gpt-4o-mini'))
 
@@ -80,7 +81,11 @@ async def invoke_llm(state:AgentState, writer: StreamWriter ):
 
 
     context= await retrieve(query) 
+    message_history = convert_human_message_to_model_message(state.get("latest_user_message", []))
+
     deps = RagDeps(context=context)
 
-    result = await rag_agent.run(query, deps=deps)
+    result = await rag_agent.run(query, 
+                                 deps=deps,
+                                 message_history=message_history)
     writer(result.data)

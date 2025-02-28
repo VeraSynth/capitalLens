@@ -1,0 +1,2 @@
+GENERAL_PROMPT = """Engage in a conversation with the user, answering their questions thoughtfully and providing helpful information on a wide range of 
+                        topics,while maintaining a friendly and informative tone."""
